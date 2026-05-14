@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Parking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo-icon">P</div>
+    <h1>Smart<span>Park</span></h1>
+    <div class="tag">v1.0 // LOCAL</div>
+  </header>
+
+  <div class="grid">
+    <div class="card slots-card">
+      <h2>// Parking Slots — click a free slot to select</h2>
+      <button class="refresh-btn" onclick="loadSlots()">↻ Refresh</button>
+      <div id="slots-grid"></div>
+    </div>
+
+    <div class="card">
+      <h2>// Vehicle Entry</h2>
+      <div class="selected-slot-info" id="selected-slot-label">No slot selected</div>
+      <div class="input-row">
+        <input type="text" id="assign-vehicle" placeholder="KA01AB1234" />
+        <button id="assign-btn" onclick="assignSlot()" disabled>Assign</button>
+      </div>
+      <div class="msg" id="assign-msg"></div>
+    </div>
+
+    <div class="card accent2">
+      <h2>// Vehicle Exit</h2>
+      <div class="input-row">
+        <input type="text" id="release-vehicle" placeholder="KA01AB1234" />
+        <button class="danger" onclick="releaseSlot()">Release</button>
+      </div>
+      <div class="msg" id="release-msg"></div>
+    </div>
+
+    <div class="card records-card">
+      <h2>// Entry / Exit Records</h2>
+      <button class="refresh-btn" onclick="loadRecords()">↻ Refresh</button>
+      <div id="records-container">
+        <div class="empty">No records yet.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
